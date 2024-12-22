@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Notebook App</title>
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+  <body style="padding: 5%;">
+    <h1 class="center-text">Notebook</h1>
+    <h2 class="center-text">Total Notes: <span id="total-notes">0</span></h2>
+    <h3 class="center-text">Showing: <span id="showing-notes">0</span></h3>
+
+    <!-- Search Bar -->
+    <input
+      type="text"
+      id="search"
+      placeholder="Search Notes..."
+      oninput="handleSearch(event)"
+    />
+
+    <!-- Add Note Form -->
+    <form onsubmit="handleFormSubmit(event)">
+      <div>
+        <label for="title">Title:</label>
+        <input type="text" id="title" required />
+      </div>
+      <div>
+        <label for="description">Description:</label>
+        <textarea id="description" required></textarea>
+      </div>
+      <button type="submit">Add Note</button>
+    </form>
+
+    <!-- Notes Display Section -->
+    <div id="notes"></div>
+
+    <script defer src="index.js"></script>
+  </body>
+</html>
